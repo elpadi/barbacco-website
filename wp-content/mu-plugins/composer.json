@@ -1,0 +1,24 @@
+{
+  "name": "elpadi/barbacco-base-code",
+  "description": "Base code for Barbacco's wordpress website.",
+  "keywords": [
+    "wordpress",
+    "blog",
+    "cms"
+  ],
+  "type": "package",
+  "homepage": "http://barbaccosf.com/",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Carlos Padilla",
+      "homepage": "http://github.com/elpadi/"
+    }
+  ],
+	"autoload": {
+		"psr-4": {
+			"MustUsePlugin\\": "stdlib/",
+			"Barbacco\\": "barbacco/"
+		}
+	}
+}
