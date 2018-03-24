@@ -1,6 +1,8 @@
 		<?php
 			// Barbacco Options
 			$options = (array)get_option( 'footer_options' );
+			if (!empty($options)) extract($options);
+			/*
 			$barbacco_address = $options['barbacco_address'];
 			$barbacco_address_link = $options['barbacco_address_link'];
 			$barbacco_page_link = $options['barbacco_page_link'];
@@ -23,6 +25,7 @@
 			$perbacco_url = $options['perbacco_url'];
 			$chronicles_link = $options['chronicles_link'];
 			$chronicles_url = $options['chronicles_url'];
+			 */
 		?>
 		<!-- The footer wrapper without the grid ! -->
 		<div id="footer-wrapper">
@@ -40,16 +43,16 @@
 						<div class="barbacco-contact-fields barbacco-main-color">
 							<h2>Contact</h2>
 							<div class="barbacco-address">
-								<?php if( $barbacco_address ) { ?>
+								<?php if( isset($barbacco_address) ) { ?>
 									<a href="<?php echo esc_url( $barbacco_address_link ); ?>" target="_blank" class="the-address"><?php echo esc_html( $barbacco_address ); ?></a>
 								<?php }
-									  if( $barbacco_page_link ) { ?>
+									  if( isset($barbacco_page_link) ) { ?>
 									<a href="<?php echo esc_url( $barbacco_page_link ); ?>" class="underline the-directions">maps, directions, and parking</a>
 								<?php } ?>
 							</div><!-- end of barbacco-address -->
 							<!-- <div class="clear"></div>end of clear -->
 							
-							<?php if( $barbacco_phone || $barbacco_takeout ) { ?>
+							<?php if( isset($barbacco_phone) || isset($barbacco_takeout) ) { ?>
 								<div class="barbacco-phones">
 									<a href="tel:<?php echo esc_html( $barbacco_phone ); ?>">[p] <?php echo esc_html( $barbacco_phone ); ?></a>
 									<a href="tel:<?php echo esc_html( $barbacco_takeout ); ?>">[takeout] <?php echo esc_html( $barbacco_takeout ); ?></a>
@@ -59,15 +62,15 @@
 							
 							<div class="barbacco-primary-contact">
 								<div class="barbacco-socials">
-								<?php if( $facebook_url || $twitter_url || $instagram_url ) { ?>
+								<?php if( isset($facebook_url) || isset($twitter_url) || isset($instagram_url) ) { ?>
 									<ul>
-										<?php if( $facebook_url ) { ?>
+										<?php if( isset($facebook_url) ) { ?>
 											<li><a href="<?php echo esc_url( $facebook_url ); ?>"><span class="flaticon-facebook55"></span></a></li>
 										<?php }
-											  if( $twitter_url ) { ?>
+											  if( isset($twitter_url) ) { ?>
 											<li><a href="<?php echo esc_url( $twitter_url ); ?>"><span class="flaticon-twitter1"></span></a></li>
 										<?php }
-											  if( $instagram_url ) { ?>
+											  if( isset($instagram_url) ) { ?>
 											<li><a href="<?php echo esc_url( $instagram_url ); ?>"><span class="flaticon-instagram12"></span></a></li>
 										<?php } ?>
 									</ul>
@@ -86,36 +89,36 @@
 							<h2>Hours</h2>
 							<div class="barbacco-open-hours-socials">
 								<div class="barbacco-open-hours">
-								<?php if( $first_row_days || $second_row_days || $third_row_days || $fourth_row_days || $fifth_row_days ) { ?>
+								<?php if( isset($first_row_days) || isset($second_row_days) || isset($third_row_days) || isset($fourth_row_days) || isset($fifth_row_days) ) { ?>
 									<div class="the-hours">
-									<?php if( $first_row_days ) { ?>
+									<?php if( isset($first_row_days) ) { ?>
 										<p><?php echo esc_html( $first_row_days ); ?></p>
 									<?php } ?>
-									<?php if( $first_row_hours ) { ?>
+									<?php if( isset($first_row_hours) ) { ?>
 										<p><?php echo esc_html( $first_row_hours ); ?></p>
 									<?php } ?>
-									<?php if( $second_row_days ) { ?>
+									<?php if( isset($second_row_days) ) { ?>
 										<p><?php echo esc_html( $second_row_days ); ?></p>
 									<?php } ?>
-									<?php if( $second_row_hours ) { ?>
+									<?php if( isset($second_row_hours) ) { ?>
 										<p><?php echo esc_html( $second_row_hours ); ?></p>
 									<?php } ?>
-									<?php if( $third_row_days ) { ?>
+									<?php if( isset($third_row_days) ) { ?>
 										<p><?php echo esc_html( $third_row_days ); ?></p>
 									<?php } ?>
-									<?php if( $third_row_hours ) { ?>
+									<?php if( isset($third_row_hours) ) { ?>
 										<p><?php echo esc_html( $third_row_hours ); ?></p>
 									<?php } ?>
-									<?php if( $fourth_row_days ) { ?>
+									<?php if( isset($fourth_row_days) ) { ?>
 										<p><?php echo esc_html( $fourth_row_days ); ?></p>
 									<?php } ?>
-									<?php if( $fourth_row_hours ) { ?>
+									<?php if( isset($fourth_row_hours) ) { ?>
 										<p><?php echo esc_html( $fourth_row_hours ); ?></p>
 									<?php } ?>
-									<?php if( $fifth_row_days ) { ?>
+									<?php if( isset($fifth_row_days) ) { ?>
 										<p><?php echo esc_html( $fifth_row_days ); ?></p>
 									<?php } ?>
-									<?php if( $fifth_row_hours ) { ?>
+									<?php if( isset($fifth_row_hours) ) { ?>
 										<p><?php echo esc_html( $fifth_row_hours ); ?></p>
 									<?php } ?>
 									</div><!-- end of the-hours -->

@@ -14,6 +14,7 @@ require(__DIR__.'/vendor/autoload.php');
 
 add_action('init', function() {
 	News::create();
+	include(__DIR__.'/barbacco/custom-fields.php');
 });
 
 /*
