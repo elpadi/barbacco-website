@@ -42,7 +42,7 @@
 	
 	// Enqueue Styles
 	function barbacco_styles_loads() {
-		wp_enqueue_style( 'theme-main-style', get_stylesheet_directory_uri() . '/style.min.css' );
+		wp_enqueue_style( 'theme-main-style', get_stylesheet_directory_uri() . '/style.css' );
 	}                                                
 	add_action( 'wp_enqueue_scripts', 'barbacco_styles_loads' );
 	

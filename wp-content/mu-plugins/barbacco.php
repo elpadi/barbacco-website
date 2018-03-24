@@ -16,14 +16,3 @@ add_action('init', function() {
 	News::create();
 	include(__DIR__.'/barbacco/custom-fields.php');
 });
-
-/*
-add_action('wp_enqueue_scripts', function() {
-	wp_enqueue_style('aop', plugins_url('aop/aop.css', __FILE__));
-	$mfn = 'wptouch_is_mobile_theme_showing';
-	if (function_exists($mfn) && $mfn()) {
-		wp_enqueue_style('aop-mobile', plugins_url('aop/aop-mobile.css', __FILE__));
-	}
-});
- */
-
