@@ -54,7 +54,7 @@
 									<div class="the-submenu-content-box">
 										<?php the_content(); ?>
 									</div><!-- end of the-submenu-content-box -->
-								</div><!-- end of the-submenu-page-title -->
+								</div><!-- end of the-submenu-page-content -->
 							</div><!-- end of tab-pane -->
 								
 						</div><!-- end of tab-content -->
