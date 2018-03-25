@@ -10,10 +10,11 @@ $featuredImage = wp_get_attachment_url( get_post_thumbnail_id( 48 ) ); ?>
 <div id="section-post-index" class="barbacco-sec-content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12 barbacco-section-header"></div><!-- end of barbacco-section-header -->
+			<div class="col-xs-12 barbacco-section-header">
+				<h1 class="barbacco-main-color"><?php echo str_replace('Archives: ', '', get_the_archive_title()); ?></h1>
+			</div><!-- end of barbacco-section-header -->
 			<div class="col-xs-12 barbacco-section-content barbacco-main-color">
 				<div class="barbacco-the-content">
-					<div class="the-submenu-page-title"><h2 class="text-uppercase"><?php echo str_replace('Archives: ', '', get_the_archive_title()); ?></h2></div>
 					<div class="the-submenu-page-content">
 						<div class="the-submenu-content-box">
 							<?php if ( have_posts() || current_user_can('edit_post', 48) ) : while ( have_posts() ) : the_post(); for ($i = 0; $i < 12; $i++): ?>

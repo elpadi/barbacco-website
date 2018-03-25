@@ -476,6 +476,23 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 /* 404 PAGE */
 .the-barbacco-404-page { min-height:250px; padding-top:100px; padding-bottom:100px; }
 
+.barbacco-the-content img {
+	max-width: 100%;
+}
+
+/* News Page */
+.post-type-archive-barbacco_news .the-submenu-content-box {
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	grid-gap: 48px 24px;
+}
+.post-type-archive-barbacco_news .the-submenu-content-box a {
+	display: block;
+}
+.post-type-archive-barbacco_news .the-submenu-content-box h2 {
+	margin: 0.5em 0 0;
+}
+
 
 /***************************************************************************************************************************
 **********	MEDIA QUERIES 
@@ -499,6 +516,9 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 	
 	.the-barbacco-404-page { min-height:450px; }
 	.barbacco-phones a { display:inline-block; margin:0 10px; }
+	.post-type-archive-barbacco_news .the-submenu-content-box {
+		grid-template-columns: repeat(3, 3fr);
+	}
 }
 @media screen and (min-width:768px) {
 	#header-wrap { position:relative; }
@@ -684,6 +704,9 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 }
 @media screen and (min-width:1280px) {
 	.barbacco-socials ul li { margin:0 10px !important; }
+	.post-type-archive-barbacco_news .the-submenu-content-box {
+		grid-template-columns: repeat(4, 4fr);
+	}
 }
 @media screen and (min-width:1366px) {
 	.barbacco-phones { margin-right:20px !important; }
