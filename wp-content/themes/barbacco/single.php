@@ -1,4 +1,9 @@
-<?php get_header(); the_post();
+<?php
+if (!current_user_can('edit_post', 48)) {
+	include(__DIR__.'/404.php');
+	exit();
+}
+get_header(); the_post();
 ?><div id="section-<?php the_ID(); ?>" class="barbacco-sec-content">
 	<div class="container-fluid">
 		<div class="row">
@@ -12,14 +17,15 @@
 						<div class="the-submenu-content-box">
 							<figure>
 								<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" alt="">
-								<figcaption><?php echo wp_get_attachment_caption(get_post_thumbnail_id($post->ID)); ?></figcaption>
+								<figcaption><?php echo trim(sprintf('%s %s', wp_get_attachment_caption(get_post_thumbnail_id($post->ID)), get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true))); ?></figcaption>
 							</figure>
-							<?php while (have_rows('news_article_images')): the_row(); ?>
+							<?php the_content();/*while (have_rows('news_article_images')): the_row(); $img = get_sub_field('news_article_image'); ?>
+							<?php if ($img && $img['url']): ?>
 							<figure>
-								<img src="<?php echo get_sub_field('news_article_image')['url']; ?>" alt="">
-								<figcaption><?php echo get_sub_field('news_article_image')['alt']; ?></figcaption>
+								<img src="<?php echo $img['url']; ?>" alt="">
+								<figcaption><?php echo trim("$img[caption] $img[alt]"); ?></figcaption>
 							</figure>
-							<?php endwhile; ?>
+							<?php endif; endwhile;*/ ?>
 						</div><!-- end of the-submenu-content-box -->
 					</div><!-- end of the-submenu-page-content -->
 				</div><!-- end of the-content -->

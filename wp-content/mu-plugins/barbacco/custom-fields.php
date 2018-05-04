@@ -18,28 +18,6 @@ if(function_exists("register_field_group"))
 				'formatting' => 'none',
 				'maxlength' => '',
 			),
-			array (
-				'key' => 'field_5ab678e4a653f',
-				'label' => 'Images',
-				'name' => 'news_article_images',
-				'type' => 'repeater',
-				'sub_fields' => array (
-					array (
-						'key' => 'field_5ab6790ba6540',
-						'label' => 'Image',
-						'name' => 'news_article_image',
-						'type' => 'image',
-						'column_width' => '',
-						'save_format' => 'object',
-						'preview_size' => 'thumbnail',
-						'library' => 'uploadedTo',
-					),
-				),
-				'row_min' => '',
-				'row_limit' => '',
-				'layout' => 'table',
-				'button_label' => 'Add Row',
-			),
 		),
 		'location' => array (
 			array (

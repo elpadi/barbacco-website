@@ -10,7 +10,7 @@ class News {
 	}
 
 	function __construct() {
-		$this->registerPostType('news', 'News Article');
+		$this->registerPostType('news', 'News Article', '', ['editor']);
 	}
 
 	public static function create() {

@@ -1,4 +1,9 @@
-<?php get_header();
+<?php 
+if (!current_user_can('edit_post', 48)) {
+	include(__DIR__.'/404.php');
+	exit();
+}
+get_header();
 $archive_settings_pages = [
 	'barbacco_news' => 673,
 ];
@@ -23,13 +28,13 @@ if (isset($archive_settings_pages[$archive_name])) $settingsPage = get_post($arc
 			<div class="col-xs-12 barbacco-section-content barbacco-main-color">
 				<div class="barbacco-the-content">
 					<div class="the-submenu-page-content">
-						<?php if ( have_posts() && current_user_can('edit_post', 48) ) : ?>
+						<?php if ( have_posts() ) : ?>
 						<div class="the-submenu-content-box">
 							<?php while ( have_posts() ) : the_post(); ?>
 							<article class="post">
 								<a href="<?php the_permalink(); ?>"><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt=""></a>
 								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php echo get_the_date(); ?></p>
+								<p><?php the_field('news_article_headline'); ?></p>
 							</article>
 							<?php endwhile; ?>
 						</div><!-- end of the-submenu-content-box -->

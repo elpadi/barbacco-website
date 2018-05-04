@@ -481,10 +481,15 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 }
 
 /* News Page */
+.post-type-archive-barbacco_news .narrow-down,
+.single-barbacco_news .narrow-down {
+	display: none !important;
+}
 .post-type-archive-barbacco_news .the-submenu-content-box {
 	display: grid;
-	grid-template-columns: repeat(2, 2fr);
+	grid-template-columns: 1fr;
 	grid-gap: 48px 24px;
+	text-align: center;
 }
 .post-type-archive-barbacco_news .the-submenu-content-box a {
 	display: block;
@@ -492,17 +497,31 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 .post-type-archive-barbacco_news .the-submenu-content-box h2 {
 	margin: 0.5em 0 0;
 }
+.post-type-archive-barbacco_news .the-submenu-content-box img {
+	height: calc(100vw - 30px);
+	width: 100%;
+	object-fit: cover;
+}
+.single-barbacco_news .barbacco-section-header {
+	border-style: none;
+}
 .single-barbacco_news .barbacco-sec-content {
 	max-width: 640px;
 	margin: 0 auto;
-	padding-top: 100px;
+	padding-top: 1em;
 	text-align: center;
 }
 .single-barbacco_news .barbacco-sec-content h2 {
 	margin: 1em 0;
+	font-size: 1.2em;
 }
+.single-barbacco_news .barbacco-the-content div,
+.single-barbacco_news .barbacco-the-content img {
+	max-width: 100%;
+}
+.single-barbacco_news .barbacco-the-content p,
 .single-barbacco_news .barbacco-the-content figure {
-	margin-bottom: 5em;
+	margin-bottom: 2.6em;
 }
 .single-barbacco_news .barbacco-the-content figure figcaption {
 	margin: 0.5em 0;
@@ -516,6 +535,15 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 **********	MEDIA QUERIES 
 ****************************************************************************************************************************/
 
+@media screen and (min-width:420px) {
+	.post-type-archive-barbacco_news .the-submenu-content-box {
+		grid-template-columns: repeat(2, 2fr);
+		text-align: left;
+	}
+	.post-type-archive-barbacco_news .the-submenu-content-box img {
+		height: calc(50vw - 27px);
+	}
+}
 @media screen and (min-width:480px) {
 	.navbar-toggle { margin:30px 0; padding:10px; }
 	.navbar-brand { height:100px; }
@@ -528,6 +556,7 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 	.barbacco-sister-restaurant .icon-Perbacco_logo { font-size:3.25em; }
 	
 	.the-barbacco-404-page { min-height:350px; padding-top:150px; padding-bottom:150px; }
+
 }
 @media screen and (min-width:640px) {
 	.barbacco-sister-restaurant { width:55%; }
@@ -536,6 +565,9 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 	.barbacco-phones a { display:inline-block; margin:0 10px; }
 	.post-type-archive-barbacco_news .the-submenu-content-box {
 		grid-template-columns: repeat(3, 3fr);
+	}
+	.post-type-archive-barbacco_news .the-submenu-content-box img {
+		height: calc(33vw - 18px);
 	}
 }
 @media screen and (min-width:768px) {
@@ -564,6 +596,10 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 	.barbacco-sister-restaurant { width:45%; }
 	
 	.the-barbacco-404-page { min-height:500px; padding-top:200px; padding-bottom:200px; }
+	
+	.single-barbacco_news .barbacco-sec-content {
+		padding-top: 100px;
+	}
 }
 @media screen and (min-width:992px) {
 	h1 { font-size:2.5em; }
@@ -740,7 +776,12 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 @media screen and (min-width:1440px) {
 	#main-navigation .navbar-nav li a { font-size:1.375em; }
 	#header-wrap .narrow-down { top:625px; }
+	.post-type-archive-barbacco_news .the-submenu-content-box {
 		grid-template-columns: repeat(4, 4fr);
+	}
+	.post-type-archive-barbacco_news .the-submenu-content-box img {
+		height: calc(25vw - 13px);
+	}
 }
 @media screen and (min-width:1680px) {
 	#header-wrap .narrow-down { top:725px; }
