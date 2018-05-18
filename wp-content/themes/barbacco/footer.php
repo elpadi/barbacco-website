@@ -153,6 +153,15 @@
 
 	<?php wp_footer(); ?>
 	
+	<script>
+													Array.from(document.getElementsByClassName('back-button'))
+													.filter(a => a.href == a.getAttribute('data-referrer'))
+													.forEach(a => a.addEventListener('click', function(e) {
+														e.preventDefault();
+														history.back();
+													}));
+	</script>
+	
 	<!-- Don't forget analytics -->
 	
 </body>

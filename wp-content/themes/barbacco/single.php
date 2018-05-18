@@ -15,13 +15,10 @@ get_header(); the_post();
 								<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" alt="">
 								<figcaption><?php echo trim(sprintf('%s %s', wp_get_attachment_caption(get_post_thumbnail_id($post->ID)), get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true))); ?></figcaption>
 							</figure>
-							<?php the_content();/*while (have_rows('news_article_images')): the_row(); $img = get_sub_field('news_article_image'); ?>
-							<?php if ($img && $img['url']): ?>
-							<figure>
-								<img src="<?php echo $img['url']; ?>" alt="">
-								<figcaption><?php echo trim("$img[caption] $img[alt]"); ?></figcaption>
-							</figure>
-							<?php endif; endwhile;*/ ?>
+							<?php the_content(); ?>
+							<footer>
+								<?php printf('<p><a class="back-button" href="%s" data-referrer="%s">%s</a></p>', get_post_type_archive_link('barbacco_news'), $_SERVER['HTTP_REFERER'], __('Back To Events')); ?>
+							</footer>
 						</div><!-- end of the-submenu-content-box -->
 					</div><!-- end of the-submenu-page-content -->
 				</div><!-- end of the-content -->

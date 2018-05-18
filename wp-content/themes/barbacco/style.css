@@ -529,6 +529,9 @@ body.page-template-press .barbacco-sec-content .the-submenu-press-content a { co
 .single-barbacco_news .barbacco-the-content figure:first-child figcaption {
 	display: none;
 }
+.single-barbacco_news .back-button {
+	text-transform: uppercase;
+}
 
 
 /***************************************************************************************************************************
