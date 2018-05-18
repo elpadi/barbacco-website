@@ -1,8 +1,4 @@
 <?php
-if (!current_user_can('edit_post', 48)) {
-	include(__DIR__.'/404.php');
-	exit();
-}
 get_header(); the_post();
 ?><div id="section-<?php the_ID(); ?>" class="barbacco-sec-content">
 	<div class="container-fluid">

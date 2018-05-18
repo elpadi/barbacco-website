@@ -1,8 +1,4 @@
 <?php 
-if (!current_user_can('edit_post', 48)) {
-	include(__DIR__.'/404.php');
-	exit();
-}
 get_header();
 $archive_settings_pages = [
 	'barbacco_news' => 673,
