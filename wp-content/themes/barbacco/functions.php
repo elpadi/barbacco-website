@@ -195,4 +195,12 @@
 	add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
 	
 	
+/***************************************************************************************************************************
+**********	OPEN LOCAL NAV ITEMS IN SAME WINDOW
+****************************************************************************************************************************/
+add_filter('wp_setup_nav_menu_item', function($item) {
+	if (strpos($item->url, 'www.barbaccosf.com') !== FALSE) $item->target = '';
+	return $item;
+});
+	
 ?>
